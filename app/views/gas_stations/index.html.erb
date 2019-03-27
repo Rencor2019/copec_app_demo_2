@@ -11,9 +11,10 @@
         <h3>Nombre:<%= gas_station.name %></h3>
         <p>Direccion:<%= gas_station.address %></p>
         <p>Id:<%= gas_station.id_station %></p>
-        <p><%= link_to 'Show', gas_station %>
-        <%= link_to 'Edit', edit_gas_station_path(gas_station) %>
-        <%= link_to 'Destroy', gas_station, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <p><%= link_to 'Detalles', gas_station, class: "btn btn-success" %>
+           <%= link_to 'Editar', edit_gas_station_path(gas_station), class: "btn btn-info" %>
+           <%= link_to 'Eliminar', gas_station, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+
         </p>
         </div>
     </div>
