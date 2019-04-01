@@ -1,0 +1,33 @@
+<div class="container">
+
+
+
+<h2>Ingreso a Aplicación de Estaciones de Servicio</h2>
+
+
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-group">
+    <%= f.label :Correo %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :Clave %><br />
+    <%= f.password_field :password, autocomplete: "current-password" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="form-group">
+      <%= f.check_box :remember_me %>
+      <%= f.label :Recordar %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Ingresar", class: 'btn btn-primary' %>
+  </div>
+<% end %>
+</div>
+
+<%= render "devise/shared/links" %>
