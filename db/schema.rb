@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_01_125320) do
+ActiveRecord::Schema.define(version: 2019_04_01_150919) do
 
   create_table "gas_stations", force: :cascade do |t|
     t.string "address"
@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(version: 2019_04_01_125320) do
     t.integer "id_station"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.string "state"
+    t.string "phone"
+    t.index ["user_id"], name: "index_gas_stations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
